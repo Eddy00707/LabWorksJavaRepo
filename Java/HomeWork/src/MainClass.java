@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.Vector;
-import java.lang.Thread;
 
 public class MainClass {
 	private static Scanner scan;
@@ -221,7 +220,8 @@ public class MainClass {
             	break;
             }
             case 11:{
-            	System.out.println("Data base will be rewrited!");
+            	if(dataBase.Size() != 0)
+            		System.out.println("Data base will be rewrited!");
             	
             	Vector<Person> pers = dataBase.LoadCollection(path);
             	dataBase.ClearCollection();
